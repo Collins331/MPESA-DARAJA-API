@@ -4,7 +4,7 @@ import requests
 
 # Create your views here.
 def pay(request):
-    return render(request, 'pay.html')
+    return render(request, 'stk_pay.html')
 
 
 def stk_push(request):
@@ -37,4 +37,4 @@ def stk_push(request):
     return redirect('thank_you')
 
 def thank_you(request):
-    return render(request, 'thank_you.html')
+    return render(request, 'thank-you.html')

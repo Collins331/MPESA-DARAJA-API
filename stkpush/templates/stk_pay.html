@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Form</title>
+<title>MPESA PAYMENt</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -65,7 +65,8 @@
 
 <div class="form-container">
   <h2>Submit Details</h2>
-  <form id="myForm">
+  <form id="myForm" action="/stk_push" method="post">
+    {% csrf_token %}
     <div class="form-group">
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
@@ -79,22 +80,5 @@
     </div>
   </form>
 </div>
-
-<script>
-  document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    // You can add your form submission logic here
-    // For example, you can fetch the input values and perform further actions
-    
-    // Example: Fetching input values
-    const phoneNumber = document.getElementById('phone').value;
-    const amount = document.getElementById('amount').value;
-    
-    // Example: Displaying fetched values (you can replace this with your own logic)
-    alert(`Phone Number: ${phoneNumber}\nAmount: ${amount}`);
-  });
-</script>
-
 </body>
 </html>
